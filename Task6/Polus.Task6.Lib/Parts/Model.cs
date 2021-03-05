@@ -18,6 +18,6 @@ namespace Polus.Task6.Lib.Parts
             ModelCode = $"W{ModelName[0]}{modelGeneration}-{ModelName.GetHashCode()}";
         }
 
-        public override string ToString() => $"{ModelName} {ModelCode}";
+        public override string ToString() => $"{ModelName}";
     }
 }

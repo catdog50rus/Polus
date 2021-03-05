@@ -17,6 +17,8 @@ namespace Polus.Task6.Lib.Parts
         {
             _rating = rating.ToString();
         }
+
+        public override string ToString() => BrandName;
     }
 
 

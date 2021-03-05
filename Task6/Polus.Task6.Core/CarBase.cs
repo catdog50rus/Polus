@@ -1,7 +1,10 @@
-﻿namespace Polus.Task6.Core
+﻿using System;
+
+namespace Polus.Task6.Core
 {
     public abstract class CarBase
     {
+        public string VIN { get; }
         public ICarType CarType { get; set; }
         public IBodyType BodyType { get; set; }
         public IBrand Brand { get; set; }
@@ -14,6 +17,9 @@
 
         public CarBase(IBodyType bodyType, IBrand brand, IModel model, IColor color, decimal price)
         {
+            VIN = $"{brand.BrandName.ToUpper()[0]}" +
+                  $"{bodyType.BodyName.ToUpper()[0]}" +
+                  $"{Guid.NewGuid():N}";
             BodyType = bodyType;
             Brand = brand;
             Model = model;
@@ -21,9 +27,5 @@
             Price = price;
         }
 
-        public double Move()
-        {
-            return 0;
-        }
     }
 }

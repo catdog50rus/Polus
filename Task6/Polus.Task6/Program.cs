@@ -38,7 +38,15 @@ namespace Polus.Task6
 
             dealer.ShowCars();
 
+            Console.WriteLine();
             Console.ReadKey();
+
+            var dealersCars = dealer.GetAllCars();
+            foreach (var car in dealersCars)
+            {
+                car.GetCarCard();
+                Console.ReadKey();
+            }
 
         }
 
